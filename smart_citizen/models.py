@@ -12,13 +12,15 @@ class SmartCitizen(models.Model):
         blank=True,
         null=True
     )
-    father = models.CharField(
-        max_length=255,
+    father = models.ForeignKey(
+        'self',
+        on_delete=models.SET_NULL,
         blank=True,
         null=True
     )
-    mother = models.CharField(
-        max_length=255,
+    mother = models.ForeignKey(
+        'self',
+        on_delete=models.SET_NULL,
         blank=True,
         null=True
     )

@@ -2,6 +2,11 @@ from django.db import models
 
 
 class SmartCitizen(models.Model):
+    uuid = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
     name_en = models.CharField(
         max_length=255,
         blank=True,
